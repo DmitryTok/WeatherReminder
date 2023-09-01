@@ -1,0 +1,60 @@
+[tool.poetry]
+name = "djangoweatherremider"
+version = "0.1.0"
+description = ""
+authors = ["DmitryTok <FoB09@ukr.net>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+djangorestframework = "^3.14.0"
+djangorestframework-simplejwt = "^5.2.2"
+djoser = "^2.2.0"
+pre-commit = "^3.3.3"
+psycopg2-binary = "^2.9.6"
+python-dotenv = "^1.0.0"
+isort = "^5.12.0"
+coverage = "^7.2.7"
+flake8 = "^6.1.0"
+flake8-pyproject = "^1.2.3"
+drf-spectacular = "^0.26.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.mypy]
+exclude = ["djangogramm_app/migrations/*", "venv"]
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.flake8]
+exclude = [
+    ".env",
+    "venv",
+    "migrations",
+    ".pre-commit-config.yaml",
+    "pyproject.toml",
+    "Makefile",
+    "requirements.txt",
+    "Dockerfile",
+    "docker-compose.yml",
+    ".gitignore",
+    "example_env_file",
+    ".coveragerc",
+    "users/templates",
+    "djangogramm_app/templates",
+    "djangogramm_app/migrations",
+    "users/migrations",
+    "multiprocessing",
+]
+ignore = ["E999"]
+max-line-length = 120
+count = true
